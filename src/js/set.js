@@ -11,23 +11,22 @@ class Team {
   }
   addAll(...character) {
     return character.forEach(character => this.members.add(character))
-
   }
+
   toArray() {
     return [...this.members]
   }
 }
 
+
+const team = new Team()
+
 const char1 = {
- name: 'Boromir'
-}
-const team = new Team([
-    char1,
-    char1
-])
+  name: 'Boromir'
+ }
 
-
-team.add(char1)
+// team.add(char1)
+// team.addAll(char1)
 team.addAll(char1,char1)
 console.log( team.toArray());
 
