@@ -1,32 +1,29 @@
-
-class Team {
+export class Team {
   constructor() {
     this.members = new Set();
   }
   add(character) {
-    if(this.members.has(character)){
-        throw new Error('такой персонаж уже есть')
+    if (this.members.has(character)) {
+      throw new Error("такой персонаж уже есть");
     }
-    this.members.add(character)
+    this.members.add(character);
   }
   addAll(...character) {
-    return character.forEach(character => this.members.add(character))
+    return character.forEach((character) => this.add(character));
   }
 
   toArray() {
-    return [...this.members]
+    return [...this.members];
   }
 }
 
-
-const team = new Team()
+const team = new Team();
 
 const char1 = {
-  name: 'Boromir'
- }
+  name: "Boromir",
+};
 
 // team.add(char1)
 // team.addAll(char1)
-team.addAll(char1,char1)
-console.log( team.toArray());
-
+team.addAll(char1);
+console.log(team.toArray());
